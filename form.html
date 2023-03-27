@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/form.css">
+    <title>Formulario de inscripción</title>
+</head>
+
+
+<body>
+
+    <div class="form-container">
+        <div class="form-container--details">
+            <div class="form-container--img"><img src="assets/logo.jpg" alt="logo"></div>
+           
+            <div class="form-container--title">Crea tu cuenta</div>
+           <hr>
+            <form action="" class="form" id="form">
+                <p  id="warnings"></p>
+
+                <div class="form--field">
+                    <div class="form--label">Nombre</div>
+                    <input class="form--input" type="text" id="nombre">
+                </div>
+
+                <!--  -->
+                <div class="form--field">
+                    <div class="form--label">Apellidos</div>
+                    <input class="form--input" type="text" id="apellidos">
+                </div>
+
+                <!--  -->
+                <div class="form--field">
+                    <div class="form--label">Correo electrónico</div>
+                    <input class="form--input" type="email" id="email">
+                </div>
+
+                <div class="form--field">
+                    <div class="form--label">Número de telefono</div>
+                    <input class="form--input" type="text" id="phone">
+                </div>
+
+                <!--  -->
+                <div class="form--field">
+                    <div class="form--label">contraseña</div>
+                    <input class="form--input" type="password"  id="password">
+                </div>
+                <button class="form--submit" id="submit"> Suscríbete</button>
+                <input type="reset" id="borrar" value="Borrar">
+            </form>
+
+        </div>
+        <div class="form-container--line-divider"></div>
+        <div class="form-container--links">
+            <a href="" class="form-container--link">Login</a>
+            <a href="" class="form-container--link">¿Olvidaste la contraseña?</a>
+        </div>
+    </div>
+
+    <!-- iframe de google maps -->
+
+    <div class="mapa__container">
+        <h2>Tu Ubicacion</h2>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3277.79263993821!2d-58.3989980851896!3d-34.76081597333347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd2952f239e85%3A0x6da5bbe95ddeb749!2sEstaci%C3%B3n%20Lomas%20de%20Zamora!5e0!3m2!1ses!2sar!4v1678645923269!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+    </div>
+
+    <script src="JS/validación.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,494 @@
+:root{
+    --fondo:#2B2B2B;
+    --rojo:#F32424;
+    --rojo-oscuro:#aa1c1c;
+    --negro-claro: #272727;
+    --textos:#ECECEC;
+    --textos-2:#DDDDDD;
+    --titulo:#988f8f;
+ }
+.dark{
+    --fondo:#000000;
+    --rojo:#04cad1;
+    --rojo-oscuro:#f33bee;
+    --negro-claro: #272727;
+    --textos:#ffffff;
+    --textos-2:#ffffff;
+    --titulo:#988f8f;
+
+
+    /* filter: invert(100%) */
+ }
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+ 
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     scroll-behavior: smooth;
+ }
+
+
+ body{
+     font-family: 'Roboto', sans-serif;
+     background-color: var(--fondo);
+ }
+ li{
+     list-style: none;
+ }
+ a{
+     text-decoration: none;
+     color: var(--textos);
+     cursor: pointer;
+ }
+ button{
+     border: none;
+     cursor: pointer;
+     background-color: black
+ }
+ h1,
+ h2,
+ h3{
+     color: #FFFFFF;
+     text-transform: uppercase;
+ }
+
+
+
+ p{
+     color: var(--textos);
+ }
+
+
+ section{
+     width: 100%;
+     height: 100vh;
+ }
+
+
+
+ /* span{
+     background-color: var(--rojo);
+     width: 10%;
+     height: 2px;
+     border-radius: 2px;
+     margin: 5px;
+ } */
+
+
+/*================================= nav==================================================== */
+
+nav{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    position: fixed;
+    z-index: 99;
+    padding: 10px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+
+}
+nav ul{
+    float: right;
+    margin-right: 55px;
+}
+
+nav ul li a{
+    padding: 1rem;
+    color: var(--textos);
+    transition: all 0.5s;
+    font-size: large;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.logo{
+    padding: 50px;
+}
+.logo img{
+    width: 85px;
+    border-radius: 8px;
+}
+
+.checkButton{
+    font-size: 30px;
+    color: var(--rojo);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.myCheckBox{
+    display: none;
+}
+
+a:hover,a.active{
+    color: var(--rojo);
+}
+
+@media screen and (max-width:952px) {
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:858px) {
+    .checkButton{
+        display: block;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        top: 108px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 9999;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+        color: var(--textos);
+    }
+
+    a:hover,a.active{
+        color: var(--rojo);
+    }
+
+    .myCheckBox:checked ~ ul{
+        left: 0;
+    }
+}
+
+/* ===========================toggle button====================================================== */
+
+.toggle-boton{
+    color: var(--rojo);
+    font-size: 1rem;
+    cursor: pointer;
+    display: none;
+}
+
+.btn-primary {
+    background-color: var(--rojo);
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    font-size: 1.2rem;
+}
+.btn-primary a{
+    text-decoration: none;
+    color: var(--textos);
+}
+
+.btn-primary:hover {
+    background-color: var(--rojo-oscuro);
+}
+.navi__container-btn span{
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* ================================boton de idioma ===================================*/
+
+.en{
+   color: var(--textos);
+}
+.es{
+    color: var(--rojo);
+}
+.check{
+    position: relative;
+    width: 50px;
+}
+.check:before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background: #333;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.check:after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 25px;
+    transition: 0.25s;
+    border: 2px solid #333;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.check:checked::after{
+    left: 25px;
+    border: 2px solid red;
+}
+.check:checked::before{
+    background-color: red;
+}
+
+/* ===============================boton de contraste========================================= */
+#switch{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/* =======================================boton de menu========================================== */
+.check-buton{
+    font-size: 1.5rem;
+    color: var(--rojo);
+    cursor: pointer;
+    display: none;
+}
+#toggle-check{
+    display: none;
+}
+/* ========================================header =============================================*/
+
+header {
+    height: 100%;
+    
+}
+h1{
+    font-size: 3.3rem;
+    padding: 100px;
+    font-weight: bold;
+}
+.carousel-caption span{
+    color: var(--rojo);
+}
+/*==================== =============peluclas ====================================================*/
+
+#peliculas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.head-text {
+    padding-top: 50px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.peliculas__container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: .5s;
+}
+
+.content h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.content button {
+    width: 50px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.content:hover {
+    opacity: 1;
+}
+
+.ver-mas {
+    width: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.ver-mas:hover {
+    background-color: var(--rojo-oscuro);
+}
+
+
+/* ===============================series============================================================ */
+
+#series {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+}
+
+
+/* ===================================proximamente=============================================== */
+
+#proximamente {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.proximamente__container {
+    display: flex;
+    padding: 30px;
+}
+
+.card-2 {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-right: 15px;
+    margin: 10px;
+}
+
+.proximamente__container-head-text {
+    margin-top: 80px;
+}
+
+
+/* footer */
+
+.footer {
+    background-color: var(--rojo-oscuro);
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: absolute;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.footer__container img {
+    width: 180px;
+    margin: 10px;
+}
+
+.footer__container {
+    transition: all .8s;
+}
+
+.footer__container a:hover {
+    color: black;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.footer__container-p {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.footer_footer__container-titulologo{
+    color: var(--textos);
+     font-family: 'Helvetica Neue', sans-serif; 
+     font-size: 4rem;
+     font-weight: bold;
+    letter-spacing: -1px; 
+    line-height: 1;
+    text-align: center;
+}
+/* ========================== responsive ============================================================= */
+
+@media screen and (max-width:700px) {
+
+    #peliculas{
+        margin: 0;
+        padding: 0;
+    }
+    .proximamente__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+@media screen and (max-width:650px) {
+    .trailer {
+        display: none;
+    }
+}
+@media screen and (max-width:400px) {
+
+    #peliculas{
+        align-items: center;
+    }
+    #series{
+        align-items: center;
+    }
+    .footer{
+        height: 100vh;
+    }
+    .footer__container{
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+    }
+}
